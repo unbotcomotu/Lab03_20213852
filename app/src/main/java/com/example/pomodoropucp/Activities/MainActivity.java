@@ -58,6 +58,8 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onResponse(Call<User> call, Response<User> response) {
                     if(response.isSuccessful()){
+                        b.inputNombre.setText("");
+                        b.inputContrasena.setText("");
                         Intent intent=new Intent(getApplicationContext(), TimerActivity.class);
                         intent.putExtra("user",response.body());
                         startActivity(intent);
